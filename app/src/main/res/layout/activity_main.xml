@@ -114,8 +114,6 @@
                 android:gravity="center_horizontal"
                 android:text="@string/config"
                 android:textSize="18sp" />
-
-
         </LinearLayout>
 
     </RelativeLayout>
