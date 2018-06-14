@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CESAR Basic Android</string>
+    <string name="trab">Tasks of Work</string>
+    <string name="casa">Tasks of Home</string>
+    <string name="config">Settings</string>
+</resources>
