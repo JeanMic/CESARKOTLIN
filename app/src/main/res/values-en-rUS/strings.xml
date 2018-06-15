@@ -4,4 +4,5 @@
     <string name="trab">Tasks of Work</string>
     <string name="casa">Tasks of Home</string>
     <string name="config">Settings</string>
+    <string name="abertura">Choose an option</string>
 </resources>

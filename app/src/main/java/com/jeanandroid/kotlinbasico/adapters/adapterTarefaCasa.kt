@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.jeanandroid.kotlinbasico.R
 import com.jeanandroid.kotlinbasico.tarefas.TarefasCasa
 
-class adapterTarefaCasa(private val tarefas: MutableList<Array<TarefasCasa>>, private val acttivity: Activity) : BaseAdapter() {
+class adapterTarefaCasa(private var tarefas: Array<TarefasCasa>, private var acttivity: Activity) : BaseAdapter() {
 
     override fun getCount(): Int {
         return tarefas.size
@@ -25,8 +25,8 @@ class adapterTarefaCasa(private val tarefas: MutableList<Array<TarefasCasa>>, pr
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val view = acttivity.layoutInflater.inflate(R.layout.adapterlayout, parent, false)
-        val tarefas = this.tarefas[position]
+        var view = acttivity.layoutInflater.inflate(R.layout.adapterlayout, parent, false)
+        var tarefas = this.tarefas[position]
 
         (view.findViewById(R.id.imagem_lista) as ImageView).setImageResource(TarefasCasa.tarefas[position].imagemId)
         (view.findViewById(R.id.titulo_lista) as TextView).setText(TarefasCasa.tarefas[position].nome)

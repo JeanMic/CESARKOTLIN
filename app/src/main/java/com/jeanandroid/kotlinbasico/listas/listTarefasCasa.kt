@@ -9,7 +9,6 @@ import com.jeanandroid.kotlinbasico.adapters.adapterTarefaCasa
 import com.jeanandroid.kotlinbasico.fragment.DetalheTarefaAct
 import com.jeanandroid.kotlinbasico.tarefas.TarefasCasa
 import kotlinx.android.synthetic.main.activity_list_tarefas_trabalho.*
-import java.util.*
 
 class listTarefasCasa : AppCompatActivity(){
 
@@ -17,13 +16,7 @@ class listTarefasCasa : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_tarefas_casa)
 
-        // recuperando a lista
-        var tarefas = Arrays.asList(TarefasCasa.tarefas)
-
-//        val listaDeCursos = findViewById(R.id.lista) as ListView
-        val adapter = adapterTarefaCasa(tarefas, this)
-
-        lista.adapter = adapter
+        lista.adapter = adapterTarefaCasa(TarefasCasa.tarefas, this)
 
         val itemClickListener = AdapterView.OnItemClickListener { listView, v, position, id ->
             val intent = Intent(this@listTarefasCasa, DetalheTarefaAct::class.java)
@@ -31,8 +24,6 @@ class listTarefasCasa : AppCompatActivity(){
             intent.putExtra(DetalheTarefaAct.EXTRA_TIPO_TAREFA, "casa")
             startActivity(intent)
         }
-        //Add the listener to the list view
-        //val listView = findViewById(R.id.lista) as ListView
         lista.onItemClickListener = itemClickListener
     }
 }

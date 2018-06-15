@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         when (view) {
 
             ImgTrab -> {
-                val intentTrabalho = Intent(this, listTarefasTrabalho::class.java)
+                var intentTrabalho = Intent(this, listTarefasTrabalho::class.java)
                 startActivity(intentTrabalho)
             }
             ImgCasa -> {
-                val intentcasa = Intent(this, listTarefasCasa::class.java)
+                var intentcasa = Intent(this, listTarefasCasa::class.java)
                 startActivity(intentcasa)
             }
 //            R.id.ImgConfig -> {
