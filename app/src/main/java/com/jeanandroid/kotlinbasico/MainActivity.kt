@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.jeanandroid.kotlinbasico.listas.listTarefasCasa
 import com.jeanandroid.kotlinbasico.listas.listTarefasTrabalho
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,10 +27,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 val intentTrabalho = Intent(this, listTarefasTrabalho::class.java)
                 startActivity(intentTrabalho)
             }
-//            R.id.ImgCasa -> {
-//                val intentcasa = Intent(this, listTarefasCasa::class.java)
-//                startActivity(intentcasa)
-//            }
+            ImgCasa -> {
+                val intentcasa = Intent(this, listTarefasCasa::class.java)
+                startActivity(intentcasa)
+            }
 //            R.id.ImgConfig -> {
 //            }
         }//                Intent CategoriasPesquisaProdutos = new Intent(getApplicationContext(), telaPesquisaCategoriasProduto.class);

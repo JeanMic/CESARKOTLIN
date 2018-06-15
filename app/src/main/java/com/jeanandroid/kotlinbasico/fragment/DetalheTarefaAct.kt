@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import com.jeanandroid.kotlinbasico.R
 
-
 class DetalheTarefaAct : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

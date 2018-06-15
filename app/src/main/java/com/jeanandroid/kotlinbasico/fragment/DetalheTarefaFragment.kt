@@ -14,7 +14,7 @@ class DetalheTarefaFragment : android.app.Fragment() {
     var Posicao: Int = 0
     var tipoTarefa = "casa"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_detalhe_tarefa, container, false)
     }
 

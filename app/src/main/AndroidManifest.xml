@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".listas.listTarefasTrabalho"></activity>
+        <activity android:name=".fragment.DetalheTarefaAct"/>
+        <activity android:name=".listas.listTarefasCasa" />
     </application>
 
 </manifest>
