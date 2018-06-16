@@ -3,4 +3,10 @@
     <string name="trab">Tarefas do Trabalho</string>
     <string name="casa">Tarefas de Casa</string>
     <string name="config">Configurações</string>
+    <string name="abertura">Escolha uma Opção</string>
+    <string name="cadeira">Android Básico com Kotlin</string>
+    <string name="aluno">Aluno: </string>
+    <string name="nomealuno">Jean Michel</string>
+    <string name="titulo">Titulo:</string>
+    <string name="descricao">Descricao:</string>
 </resources>

@@ -29,7 +29,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="@string/abertura" />
+                android:text="@string/abertura"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -95,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/config" />
+                app:srcCompat="@drawable/inform" />
 
         </LinearLayout>
 

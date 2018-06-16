@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".listas.listTarefasTrabalho"></activity>
-        <activity android:name=".fragment.DetalheTarefaAct"/>
+        <activity android:name=".listas.listTarefasTrabalho" />
+        <activity android:name=".fragment.DetalheTarefaAct" />
         <activity android:name=".listas.listTarefasCasa" />
+        <activity android:name=".actInformacoes"></activity>
     </application>
 
 </manifest>

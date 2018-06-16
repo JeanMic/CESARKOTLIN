@@ -3,6 +3,11 @@
     <string name="app_name">CESAR Basic Android</string>
     <string name="trab">Tasks of Work</string>
     <string name="casa">Tasks of Home</string>
-    <string name="config">Settings</string>
+    <string name="config">Information</string>
     <string name="abertura">Choose an option</string>
+    <string name="cadeira">Basic Android Using Kotlin</string>
+    <string name="aluno">Student: </string>
+    <string name="nomealuno">Jean Michel</string>
+    <string name="titulo">Title:</string>
+    <string name="descricao">Description:</string>
 </resources>

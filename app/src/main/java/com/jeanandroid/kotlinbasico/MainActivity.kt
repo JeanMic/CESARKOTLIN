@@ -1,12 +1,12 @@
 package com.jeanandroid.kotlinbasico
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.jeanandroid.kotlinbasico.listas.listTarefasCasa
 import com.jeanandroid.kotlinbasico.listas.listTarefasTrabalho
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
@@ -20,21 +20,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-
         when (view) {
-
-            ImgTrab -> {
-                var intentTrabalho = Intent(this, listTarefasTrabalho::class.java)
-                startActivity(intentTrabalho)
-            }
-            ImgCasa -> {
-                var intentcasa = Intent(this, listTarefasCasa::class.java)
-                startActivity(intentcasa)
-            }
-//            R.id.ImgConfig -> {
-//            }
-        }//                Intent CategoriasPesquisaProdutos = new Intent(getApplicationContext(), telaPesquisaCategoriasProduto.class);
-        //                startActivity(CategoriasPesquisaProdutos);
-
+            ImgTrab -> {startActivity<listTarefasTrabalho>()}
+            ImgCasa -> {startActivity<listTarefasCasa>()}
+            ImgConfig -> {startActivity<actInformacoes>()}
+        }
     }
 }
