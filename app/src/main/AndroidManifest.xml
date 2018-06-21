@@ -19,7 +19,17 @@
         <activity android:name=".listas.listTarefasTrabalho" />
         <activity android:name=".fragment.DetalheTarefaAct" />
         <activity android:name=".listas.listTarefasCasa" />
-        <activity android:name=".actInformacoes"></activity>
+        <activity android:name=".actInformacoes" />
+
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ACAO_TESTE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

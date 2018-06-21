@@ -9,4 +9,6 @@
     <string name="nomealuno">Jean Michel</string>
     <string name="titulo">Titulo:</string>
     <string name="descricao">Descricao:</string>
+    <string name="notif">Criar Notificação</string>
+    <string name="notifbroad">Notificação Broadcast</string>
 </resources>
