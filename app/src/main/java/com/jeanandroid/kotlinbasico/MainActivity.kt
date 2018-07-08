@@ -1,5 +1,7 @@
 package com.jeanandroid.kotlinbasico
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -23,7 +25,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         when (view) {
             ImgTrab -> {startActivity<listTarefasTrabalho>()}
             ImgCasa -> {startActivity<listTarefasCasa>()}
-            ImgConfig -> {startActivity<actInformacoes>()}
+//            ImgConfig -> {startActivity<actInformacoes>()}
+            ImgConfig -> {
+                var uris = Uri.parse("http://google.com")
+                var intents = Intent(Intent.ACTION_VIEW, uris)
+                startActivity(intents)
+            }
         }
     }
 }

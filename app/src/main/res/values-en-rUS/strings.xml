@@ -12,4 +12,5 @@
     <string name="descricao">Description:</string>
     <string name="notif">Create Notif</string>
     <string name="notifbroad">Create Notif Broadcast</string>
+    <string name="servico">Service</string>
 </resources>

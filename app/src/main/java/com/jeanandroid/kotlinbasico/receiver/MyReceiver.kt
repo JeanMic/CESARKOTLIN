@@ -9,12 +9,16 @@ import com.jeanandroid.kotlinbasico.NotificacaoUtil
 
 class MyReceiver : BroadcastReceiver() {
 
+    companion object {
+        var TITULO = "TITLE"
+        var DESCRICAO = "DESC"
+    }
+
     override fun onReceive(context: Context, intent: Intent) {
-
-        val intent = Intent(context, MainActivity::class.java)
-
-        Log.d("RECIVER", "entrou  no reciver")
-        NotificacaoUtil.create(context, 2, intent,"Broadcast Botao", "Notificação do Botão")
+        var teste = intent.extras
+        Log.d("CESAR_NOTIFICACAO", "${teste.getString(TITULO)} //  ${teste.getString(DESCRICAO)}")
+        var intent = Intent(context, MainActivity::class.java)
+        NotificacaoUtil.create(context, 2, intent, teste.getString(TITULO), teste.getString(DESCRICAO))
 
     }
 }
