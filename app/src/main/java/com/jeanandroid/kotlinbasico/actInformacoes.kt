@@ -29,7 +29,7 @@ class actInformacoes : AppCompatActivity(), View.OnClickListener {
         notif?.setOnClickListener(this)
         broadcast?.setOnClickListener(this)
         mensagem?.setOnClickListener(this)
-        servico?.setOnClickListener(this)
+//        servico?.setOnClickListener(this)
         registerReceiver(helloReceiver, IntentFilter("BINGO"))
     }
 
@@ -46,9 +46,9 @@ class actInformacoes : AppCompatActivity(), View.OnClickListener {
                 sendBroadcast(Intent("BINGO"))
                 Toast.makeText(this, "Intent enviada!", Toast.LENGTH_SHORT).show()
             }
-            servico -> {
-//                startService(Intent(this, exemploService::class.java))
-            }
+//            servico -> {
+////                startService(Intent(this, exemploService::class.java))
+//            }
 
         }//fim when
     }//fim metodo

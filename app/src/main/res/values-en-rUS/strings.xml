@@ -12,5 +12,6 @@
     <string name="descricao">Description:</string>
     <string name="notif">Create Notif</string>
     <string name="notifbroad">Create Notif Broadcast</string>
-    <string name="servico">Service</string>
+    <string name="servico">Service Example</string>
+    <string name="inserir">Want to Receive a Reminder in How Many Hours?</string>
 </resources>

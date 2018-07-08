@@ -7,23 +7,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import com.jeanandroid.kotlinbasico.R
 import com.jeanandroid.kotlinbasico.tarefas.TarefaTrabalho
 import com.jeanandroid.kotlinbasico.tarefas.TarefasCasa
 import kotlinx.android.synthetic.main.fragment_detalhe_tarefa.*
+
+
 
 class DetalheTarefaFragment : android.app.Fragment(), View.OnClickListener {
 
     private var valRefInter: FragInterface? = null
     var Posicao: Int = 0
     var tipoTarefa = "casa"
+    var campoHoras: EditText? = null
 
     internal interface FragInterface {
-        fun confirAgenda(titulo: String, descricao: String)
+        fun confirAgenda(titulo: String, descricao: String, horas: String)
     };
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_detalhe_tarefa, container, false)
+        campoHoras = (view.findViewById(R.id.imputhoras) as EditText)
         return view
 
     }
@@ -59,13 +65,15 @@ class DetalheTarefaFragment : android.app.Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        Log.d("CESAR_ONCLICK", "$Posicao // $tipoTarefa")
-        if (tipoTarefa == "casa") {
-            valRefInter?.confirAgenda(TarefasCasa.tarefas[Posicao].nome, TarefasCasa.tarefas[Posicao].descricao)
+
+        if (tipoTarefa == "casa" && !campoHoras?.text!!.isEmpty()) {
+            Log.d("CESAR_ONCLICK", "ENTROU_IF")
+            valRefInter?.confirAgenda(TarefasCasa.tarefas[Posicao].nome, TarefasCasa.tarefas[Posicao].descricao, campoHoras?.text.toString())
+        } else if (!campoHoras?.text!!.isEmpty()) {
+            Log.d("CESAR_ONCLICK", "ENTROU_IF")
+            valRefInter?.confirAgenda(TarefaTrabalho.trabalhos[Posicao].nome, TarefaTrabalho.trabalhos[Posicao].descricao, campoHoras?.text.toString())
         } else {
-            valRefInter?.confirAgenda(TarefaTrabalho.trabalhos[Posicao].nome, TarefaTrabalho.trabalhos[Posicao].descricao)
+            Toast.makeText(getActivity(),"Favor inserir em quantas horas deseja receber um aviso!",Toast.LENGTH_SHORT).show()
         }
-
     }
-
 }

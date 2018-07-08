@@ -8,19 +8,21 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.jeanandroid.kotlinbasico.R
 import com.jeanandroid.kotlinbasico.receiver.MyReceiver
 
 class DetalheTarefaAct : Activity(), DetalheTarefaFragment.FragInterface {
 
-    override fun confirAgenda(titulo: String, descricao: String) {
+    override fun confirAgenda(titulo: String, descricao: String, horas: String) {
         var intentTarefa = Intent(this, MyReceiver::class.java)
         intentTarefa.putExtra(MyReceiver.TITULO, titulo)
         intentTarefa.putExtra(MyReceiver.DESCRICAO, descricao)
         Log.d("CESAR_PUT_EXTRA_ALARME", "$titulo // $descricao")
         var p = PendingIntent.getBroadcast(this, requestCode++, intentTarefa, Intent.FILL_IN_DATA)
         var alarme = this.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        alarme.set(AlarmManager.RTC_WAKEUP, getTime(), p)
+        alarme.set(AlarmManager.RTC_WAKEUP, getTime(horas?.toInt()), p)
+        Toast.makeText(this,"Notificação Agendada com Sucesso!", Toast.LENGTH_SHORT).show()
         Log.d("CESAR_AGENDAMENTO", "Alarme agendado")
     }
 
@@ -39,10 +41,10 @@ class DetalheTarefaAct : Activity(), DetalheTarefaFragment.FragInterface {
         var requestCode: Int = 0
     }
 
-    fun getTime(): Long {
+    fun getTime(horas: Int): Long {
         val c = Calendar.getInstance()
         c.timeInMillis = System.currentTimeMillis()
-        c.add(Calendar.SECOND, 10)
+        c.add(Calendar.HOUR, horas)
         return c.timeInMillis
     }
 

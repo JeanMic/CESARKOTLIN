@@ -1,7 +1,6 @@
 package com.jeanandroid.kotlinbasico
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -18,19 +17,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         ImgTrab?.setOnClickListener(this)
         ImgCasa?.setOnClickListener(this)
-        ImgConfig?.setOnClickListener(this)
+        servico?.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when (view) {
             ImgTrab -> {startActivity<listTarefasTrabalho>()}
             ImgCasa -> {startActivity<listTarefasCasa>()}
-//            ImgConfig -> {startActivity<actInformacoes>()}
-            ImgConfig -> {
-                var uris = Uri.parse("http://google.com")
-                var intents = Intent(Intent.ACTION_VIEW, uris)
-                startActivity(intents)
-            }
+            servico -> { startService(Intent(this, exemploService::class.java)) }
         }
     }
 }
